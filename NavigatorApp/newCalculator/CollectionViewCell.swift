@@ -16,7 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func setUp(_ cellItems:[Int],_ index: Int){
-        self.backgroundColor = Utility.generateRandomColor()
+       // self.backgroundColor = Utility.generateRandomColor()
         self.cellLabel.text = String(cellItems[index])
     }
     
