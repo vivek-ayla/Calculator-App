@@ -11,6 +11,14 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    var tableCell:[TableViewCellModel] = [
+        TableViewCellModel(title: "Calculator",image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Green Screen",image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Alert1",image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Alert2",image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Alert3",image: UIImage(named: "anyImage"))
+        ]
+    
     var viewControllerID:[String] = ["calculatorVC","greenScreenVC" ]
     
     override func viewDidLoad() {
@@ -49,24 +57,22 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             vc.navigationController?.navigationBar.titleTextAttributes = textAttributes
             navigationController?.pushViewController(vc, animated: true)
         }else{
-            let alertController = UIAlertController(title: "Hi", message: "This is not clickable", preferredStyle: .alert)
+            let alertController = UIAlertController(title: tableCell[indexPath.row].getTitle(), message: "This is not clickable", preferredStyle: .alert)
             let okAlert = UIAlertAction(title: "Ok", style: .default){_ in
                             
             }
             alertController.addAction(okAlert)
             present(alertController,animated: true,completion: nil)
-
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return tableCell.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for:indexPath) as! TableViewCell
-        var tableCell = TableViewCellModel()
-        cell.setUp(tableCell: &tableCell,index: indexPath.row)
+        cell.setUp(tableCell:tableCell[indexPath.row])
         return cell
     }
 }

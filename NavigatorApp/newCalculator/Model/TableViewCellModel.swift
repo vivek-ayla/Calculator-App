@@ -9,19 +9,16 @@ import Foundation
 import UIKit
 
 public struct TableViewCellModel{
-    var item:String?
-    var image:UIImage?
+    let title:String?
+    let image:UIImage?
     
-    public mutating func setItem(item: String){
-        self.item = item
-    }
-    
-    public mutating func setImage(image: UIImage){
+    init(title: String? = nil, image: UIImage? = nil) {
+        self.title = title
         self.image = image
     }
     
-    public func getItem() -> String{
-        return item!
+    public func getTitle() -> String{
+        return title!
     }
     
     public func getImage() -> UIImage{
