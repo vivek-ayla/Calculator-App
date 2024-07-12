@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var tableCell:[TableViewCellModel] = [
-        TableViewCellModel(title: "Calculator",image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Green Screen",image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Alert1",image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Alert2",image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Alert3",image: UIImage(named: "anyImage"))
+        TableViewCellModel(title: "Calculator",subTitle: "Calculator SubTitle" , image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Green Screen", subTitle: "Green SubTitle", image: UIImage(named: "")),
+        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: UIImage(named: "anyImage")),
+        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: UIImage(named: "anyImage"))
         ]
     
     var viewControllerID:[String] = ["calculatorVC","greenScreenVC" ]

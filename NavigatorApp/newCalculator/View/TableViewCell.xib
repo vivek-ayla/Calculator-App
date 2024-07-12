@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23086.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23076"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,34 +16,43 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-z5-OQV">
-                        <rect key="frame" x="20" y="35" width="50" height="50"/>
+                        <rect key="frame" x="20" y="35" width="60" height="70"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="QYV-Qg-f7S"/>
-                            <constraint firstAttribute="width" constant="50" id="uKv-lk-Nd4"/>
+                            <constraint firstAttribute="height" constant="70" id="Ash-D6-Aj0"/>
+                            <constraint firstAttribute="width" constant="60" id="qqI-eX-P4m"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olB-H2-596">
-                        <rect key="frame" x="150" y="51.666666666666664" width="224" height="16.999999999999993"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title                               " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olB-H2-596">
+                        <rect key="frame" x="118.00000000000001" y="55.999999999999993" width="157.33333333333337" height="17.666666666666664"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Subtitles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9x-El-s14">
+                        <rect key="frame" x="236" y="70" width="39.333333333333314" height="21.333333333333329"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="olB-H2-596" firstAttribute="centerY" secondItem="ga9-cY-4Xu" secondAttribute="centerY" id="4RQ-Ja-svZ"/>
-                    <constraint firstItem="olB-H2-596" firstAttribute="centerX" secondItem="ga9-cY-4Xu" secondAttribute="centerX" id="D6e-nc-Rm5"/>
-                    <constraint firstItem="1Jv-z5-OQV" firstAttribute="centerY" secondItem="olB-H2-596" secondAttribute="centerY" id="NgQ-NL-eGe"/>
-                    <constraint firstItem="olB-H2-596" firstAttribute="centerX" secondItem="ga9-cY-4Xu" secondAttribute="centerX" id="Soc-5g-izB"/>
-                    <constraint firstItem="1Jv-z5-OQV" firstAttribute="leading" secondItem="ga9-cY-4Xu" secondAttribute="leadingMargin" id="b99-pr-sR4"/>
-                    <constraint firstItem="olB-H2-596" firstAttribute="centerY" secondItem="ga9-cY-4Xu" secondAttribute="centerY" id="lcW-JE-pBW"/>
-                    <constraint firstAttribute="trailing" secondItem="olB-H2-596" secondAttribute="trailing" constant="150" id="oR7-w7-3zp"/>
+                    <constraint firstItem="1Jv-z5-OQV" firstAttribute="leading" secondItem="ga9-cY-4Xu" secondAttribute="leading" constant="20" symbolic="YES" id="A7n-Oq-9Ut"/>
+                    <constraint firstItem="olB-H2-596" firstAttribute="top" secondItem="ga9-cY-4Xu" secondAttribute="top" constant="56" id="JwS-xe-Yne"/>
+                    <constraint firstAttribute="bottom" secondItem="l9x-El-s14" secondAttribute="bottom" constant="38.329999999999998" id="Pt6-lR-7Jh"/>
+                    <constraint firstItem="1Jv-z5-OQV" firstAttribute="centerY" secondItem="ga9-cY-4Xu" secondAttribute="centerY" id="We9-7p-dKV"/>
+                    <constraint firstItem="l9x-El-s14" firstAttribute="leading" secondItem="1Jv-z5-OQV" secondAttribute="trailing" constant="156" id="Xsc-cn-9xA"/>
+                    <constraint firstItem="olB-H2-596" firstAttribute="leading" secondItem="1Jv-z5-OQV" secondAttribute="trailing" constant="38" id="ba0-dY-TfQ"/>
+                    <constraint firstItem="olB-H2-596" firstAttribute="centerY" secondItem="ga9-cY-4Xu" secondAttribute="centerY" id="iCS-uY-HlD"/>
+                    <constraint firstItem="l9x-El-s14" firstAttribute="top" secondItem="ga9-cY-4Xu" secondAttribute="top" constant="70" id="kdV-Db-qoR"/>
+                    <constraint firstItem="1Jv-z5-OQV" firstAttribute="top" secondItem="ga9-cY-4Xu" secondAttribute="top" constant="35" id="zT7-NG-ZzT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellImage" destination="1Jv-z5-OQV" id="khf-cu-f6J"/>
                 <outlet property="cellLabel" destination="olB-H2-596" id="24g-BY-GKs"/>
+                <outlet property="cellSubTitle" destination="l9x-El-s14" id="XlN-nc-RuC"/>
             </connections>
-            <point key="canvasLocation" x="-125.19083969465649" y="47.183098591549296"/>
+            <point key="canvasLocation" x="-41" y="-52"/>
         </tableViewCell>
     </objects>
 </document>
