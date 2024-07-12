@@ -37,48 +37,11 @@
 		84EB336C2C2B40E2007592D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		84B9F5372C3FB0B800EA99DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				CollectionViewCellModel.swift,
-				TableViewCellModel.swift,
-			);
-			target = 84EB335A2C2B40E1007592D3 /* newCalculator */;
-		};
-		84B9F5392C3FB0EB00EA99DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				CollectionViewCell.swift,
-				CollectionViewCell.xib,
-				TableViewCell.swift,
-				TableViewCell.xib,
-			);
-			target = 84EB335A2C2B40E1007592D3 /* newCalculator */;
-		};
-		84B9F54A2C3FB4AC00EA99DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				CalculatorViewController.swift,
-				GreenScreenViewController.swift,
-				ViewController.swift,
-			);
-			target = 84EB335A2C2B40E1007592D3 /* newCalculator */;
-		};
-		84D97A052C3FB5FB0053A62F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Utility.swift,
-			);
-			target = 84EB335A2C2B40E1007592D3 /* newCalculator */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		84B9F5362C3FB0B000EA99DB /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84B9F5372C3FB0B800EA99DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
-		84B9F5382C3FB0E400EA99DB /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84B9F5392C3FB0EB00EA99DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
-		84B9F5462C3FB4AC00EA99DB /* Controller */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84B9F54A2C3FB4AC00EA99DB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Controller; sourceTree = "<group>"; };
-		84D97A022C3FB5EC0053A62F /* Utility */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84D97A052C3FB5FB0053A62F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Utility; sourceTree = "<group>"; };
+		84B9F5362C3FB0B000EA99DB /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		84B9F5382C3FB0E400EA99DB /* View */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = View; sourceTree = "<group>"; };
+		84B9F5462C3FB4AC00EA99DB /* Controller */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Controller; sourceTree = "<group>"; };
+		84D97A022C3FB5EC0053A62F /* Utility */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utility; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
