@@ -15,9 +15,9 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setUp(collectionCell:CollectionViewCellModel){
+    func setUp(collectionCell:CollectionViewCellModel) {
         self.backgroundColor = Utility.generateRandomColor()
-        self.cellLabel.text = collectionCell.title
+        self.cellLabel.text = collectionCell.getTitle()
     }
-    
+
 }
