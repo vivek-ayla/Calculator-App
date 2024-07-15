@@ -6,34 +6,114 @@
 //
 
 import Testing
+import UIKit
 @testable import newCalculator
 
+
+
+// MARK: COLLECTION VIEW CELL MODEL TEST CASES
+@Suite("Model - Collection View Cell Model")
+struct collectionViewCellModel {
+    @Suite("Collection View Cell Model Without initializer")
+    struct collectionViewCellModelWithoutInitializer {
+        var cvmut: CollectionViewCellModel = CollectionViewCellModel()
+        
+        @Test
+        func getTitle() async throws {
+            #expect(cvmut.getTitle() == "")
+        }
+    }
+    
+    @Suite("Collection View Cell Model With initializer")
+    struct collectionViewCellModelWithInitializer {
+        var cvmut: CollectionViewCellModel = CollectionViewCellModel(title: "Collection View Cell Title")
+        
+        @Test
+        func getTitle() async throws {
+            #expect(cvmut.getTitle() == "Collection View Cell Title")
+        }
+    }
+}
+
+// MARK: TABLE VIEW CELL MODEL TEST CASES
+@Suite("Model - Table View Cell Model")
+struct tableViewCellModel {
+    
+    @Suite("Table View Cell Model Without Initializer")
+    struct tableViewCellModelWithoutInitializer {
+        var tvmut: TableViewCellModel = TableViewCellModel()
+        
+        @Test
+        func getTitle() async throws {
+            #expect(tvmut.getTitle() == "")
+        }
+        
+        @Test
+        func getSubTitle() async throws {
+            #expect(tvmut.getSubTitle() == "")
+        }
+        
+        @Test
+        func getImage() async throws {
+            #expect(tvmut.getImage() == UIImage(systemName: "info.circle"))
+        }
+    }
+    
+    @Suite("Table View Cell Model With Initializer")
+    struct tableViewCellModelWithInitializer {
+        var tvmut: TableViewCellModel = TableViewCellModel(title: "Table View Cell Title", subTitle: "Table View Cell Subtitle", image: UIImage(named: "anyImage"))
+        
+        @Test
+        func getTitle() async throws {
+            #expect(tvmut.getTitle() == "Table View Cell Title")
+        }
+        
+        @Test
+        func getSubTitle() async throws {
+            #expect(tvmut.getSubTitle() == "Table View Cell Subtitle")
+        }
+        
+        @Test
+        func getImage() async throws {
+            #expect(tvmut.getImage() == UIImage(named: "anyImage"))
+        }
+    }
+
+}
+
+
+// MARK: CONTROLLER TEST CASES
+@Suite("Controller - Calculator View Controller")
 struct newCalculatorTest{
     
-    var sut:CalculatorViewController = CalculatorViewController()
+    var sut: CalculatorViewController = CalculatorViewController()
     
-    @Test func setExpression() throws{
+    @Test
+    func setExpression() throws{
         let expression = sut.setExpression("1234+5+9X13-6")
         let result = "1234+5+9X13-6"
         
         #expect(expression == result)
     }
     
-    @Test func buttonOne(){
+    @Test
+    func buttonOne(){
         let expression = sut.buttonOne()
         let result = "1"
         
         #expect(expression == result)
     }
     
-    @Test func buttonTwo(){
+    @Test
+    func buttonTwo(){
         let expression = sut.buttonTwo()
         let result = "2"
         
         #expect(expression == result)
     }
     
-    @Test func buttonThree(){
+    @Test
+    func buttonThree(){
         let expression = sut.buttonThree()
         let result = "3"
         
@@ -41,7 +121,8 @@ struct newCalculatorTest{
         
     }
     
-    @Test func buttonFour(){
+    @Test
+    func buttonFour(){
         let expression = sut.buttonFour()
         let result = "4"
         
@@ -49,7 +130,8 @@ struct newCalculatorTest{
         
     }
     
-    @Test func buttonFive(){
+    @Test
+    func buttonFive(){
         let expression = sut.buttonFive()
         let result = "5"
         
@@ -57,7 +139,8 @@ struct newCalculatorTest{
         
     }
     
-    @Test func buttonSix(){
+    @Test
+    func buttonSix(){
         let expression = sut.buttonSix()
         let result = "6"
         
@@ -65,7 +148,8 @@ struct newCalculatorTest{
         
     }
     
-    @Test func buttonSeven(){
+    @Test
+    func buttonSeven(){
         let expression = sut.buttonSeven()
         let result = "7"
         
@@ -73,7 +157,8 @@ struct newCalculatorTest{
         
     }
     
-    @Test func buttonEight(){
+    @Test
+    func buttonEight(){
         let expression = sut.buttonEight()
         let result = "8"
         
@@ -81,38 +166,49 @@ struct newCalculatorTest{
         
     }
     
-    @Test func buttonNine(){
+    @Test
+    func buttonNine(){
         let expression = sut.buttonNine()
         let result = "9"
         
         #expect(expression == result)
     }
     
-    @Test func buttonZero_AppendZero(){
-        let expression = sut.buttonZero()
-        let result = "0"
+    @Suite("Button Zero")
+    struct buttonZero {
         
-        #expect(expression == result)
+        var sut: CalculatorViewController = CalculatorViewController()
+        
+        @Test
+        func buttonZero_AppendZero(){
+            let expression = sut.buttonZero()
+            let result = "0"
+            
+            #expect(expression == result)
+        }
+        
+        @Test
+        func buttonZero_IfZeroAlreadyInExpression(){
+            sut.expression = "1÷0"
+            sut.expression = sut.buttonZero()
+            
+            let expression = sut.expression
+            let result = "1÷0"
+            
+            #expect(expression == result)
+        }
     }
     
-    @Test func buttonZero_IfZeroAlreadyInExpression(){
-        sut.expression = "1÷0"
-        sut.expression = sut.buttonZero()
-        
-        let expression = sut.expression
-        let result = "1÷0"
-        
-        #expect(expression == result)
-    }
-    
-    @Test func buttonDot(){
+    @Test
+    func buttonDot(){
         let expression = sut.buttonDot()
         let result = "."
         
         #expect(expression == result)
     }
     
-    @Test func buttonAddition(){
+    @Test
+    func buttonAddition(){
         sut.expression = "12"
         sut.expression = sut.buttonAddition()
         
@@ -122,7 +218,8 @@ struct newCalculatorTest{
         #expect(expression == result)
     }
     
-    @Test func buttonSubtraction(){
+    @Test
+    func buttonSubtraction(){
         sut.expression = "387"
         sut.expression = sut.buttonSubtraction()
         
@@ -132,7 +229,8 @@ struct newCalculatorTest{
         #expect(expression == result)
     }
     
-    @Test func buttonMultiplication(){
+    @Test
+    func buttonMultiplication(){
         sut.expression = "185"
         sut.expression = sut.buttonMultiplication()
         
@@ -142,7 +240,8 @@ struct newCalculatorTest{
         #expect(expression == result)
     }
     
-    @Test func buttonDivision(){
+    @Test
+    func buttonDivision(){
         sut.expression = "78"
         sut.expression = sut.buttonDivision()
         
@@ -152,11 +251,13 @@ struct newCalculatorTest{
         #expect(expression == result)
     }
     
-    @Test func buttonAllClear(){
+    @Test
+    func buttonAllClear(){
         #expect(sut.buttonAllClear() == true)
     }
     
-    @Test func calculateExpresssion() throws {
+    @Test
+    func calculateExpresssion() throws {
         let expression = "1+6+8-13"
         
         let result = sut.calculateExpression(expression)

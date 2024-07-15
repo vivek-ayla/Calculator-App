@@ -8,10 +8,17 @@
 import Foundation
 import UIKit
 
-struct CollectionViewCellModel{
-    let title:String
+struct CollectionViewCellModel {
+    let title: String?
     
-    init(title: String) {
+    init(title: String? = nil) {
         self.title = title
+    }
+    
+    public func getTitle() -> String{
+        guard let title = self.title else {
+            return ""
+        }
+        return title
     }
 }
