@@ -11,7 +11,7 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
-    
+    @IBOutlet weak var cellSubTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,9 +21,9 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setUp(_ title:String ){
-        self.cellImage.frame = CGRect(x: 5, y: 5 , width: 50, height: 50)
-        self.cellImage.image = UIImage(named:"anyImage")
-        self.cellLabel?.text = title
+    func setUp(tableCell:TableViewCellModel){
+        self.cellImage.image = tableCell.getImage()
+        self.cellSubTitle.text = tableCell.getSubTitle()
+        self.cellLabel?.text = tableCell.getTitle()
     }
 }

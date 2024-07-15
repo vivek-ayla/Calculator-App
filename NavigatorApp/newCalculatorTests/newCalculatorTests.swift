@@ -9,7 +9,6 @@ import XCTest
 @testable import newCalculator
 
 final class newCalculatorTests: XCTestCase {
-    
     var sut:CalculatorViewController = CalculatorViewController()
 
     override func setUpWithError() throws {
