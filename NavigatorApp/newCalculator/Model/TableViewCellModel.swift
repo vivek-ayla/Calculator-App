@@ -9,14 +9,22 @@ import Foundation
 import UIKit
 
 public struct TableViewCellModel {
-    let title:String?
-    let subTitle:String?
-    let image:UIImage?
+    static var idCount = 1
+    let id: Int
+    let title: String?
+    let subTitle: String?
+    let image: UIImage?
     
     init(title: String? = nil, subTitle:String? = nil, image: UIImage? = nil) {
+        id = TableViewCellModel.idCount
         self.title = title
         self.subTitle = subTitle
         self.image = image
+        TableViewCellModel.idCount += 1
+    }
+    
+    public func getId()->Int{
+        return id
     }
     
     public func getTitle() -> String {

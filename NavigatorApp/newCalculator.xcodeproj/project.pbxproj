@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84098B5D2C2EA873001024CC /* newCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84098B5C2C2EA873001024CC /* newCalculatorTests.swift */; };
-		8419CC482C3D38E600FF07AB /* newCalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419CC472C3D38E600FF07AB /* newCalculatorTest.swift */; };
+		8419CC482C3D38E600FF07AB /* CalculatorViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419CC472C3D38E600FF07AB /* CalculatorViewControllerTest.swift */; };
 		84EB335F2C2B40E1007592D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB335E2C2B40E1007592D3 /* AppDelegate.swift */; };
 		84EB33612C2B40E1007592D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EB33602C2B40E1007592D3 /* SceneDelegate.swift */; };
 		84EB33662C2B40E1007592D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 84EB33652C2B40E1007592D3 /* Base */; };
@@ -16,6 +16,8 @@
 		84EB336B2C2B40E2007592D3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 84EB336A2C2B40E2007592D3 /* Base */; };
 		F65E52292C450A1A005C41F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EB33642C2B40E1007592D3 /* Main.storyboard */; };
 		F65E522A2C450A23005C41F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EB33692C2B40E2007592D3 /* LaunchScreen.storyboard */; };
+		F65E52B52C468085005C41F9 /* TableViewCellModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E52B42C468085005C41F9 /* TableViewCellModelTest.swift */; };
+		F65E52B72C468099005C41F9 /* CollectionViewCellModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E52B62C468098005C41F9 /* CollectionViewCellModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		84098B5A2C2EA873001024CC /* newCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84098B5C2C2EA873001024CC /* newCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCalculatorTests.swift; sourceTree = "<group>"; };
 		8419CC452C3D38E600FF07AB /* newCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8419CC472C3D38E600FF07AB /* newCalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCalculatorTest.swift; sourceTree = "<group>"; };
+		8419CC472C3D38E600FF07AB /* CalculatorViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewControllerTest.swift; sourceTree = "<group>"; };
 		84EB335B2C2B40E1007592D3 /* newCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EB335E2C2B40E1007592D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EB33602C2B40E1007592D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		84EB33672C2B40E2007592D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84EB336A2C2B40E2007592D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EB336C2C2B40E2007592D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F65E52B42C468085005C41F9 /* TableViewCellModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellModelTest.swift; sourceTree = "<group>"; };
+		F65E52B62C468098005C41F9 /* CollectionViewCellModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -104,6 +108,7 @@
 		F65E52232C4509FF005C41F9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				UIViewUtility.swift,
 				Utility.swift,
 			);
 			target = 84EB335A2C2B40E1007592D3 /* newCalculator */;
@@ -111,6 +116,7 @@
 		F65E52242C4509FF005C41F9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				UIViewUtility.swift,
 				Utility.swift,
 			);
 			target = 84098B592C2EA873001024CC /* newCalculatorTests */;
@@ -118,6 +124,7 @@
 		F65E52252C4509FF005C41F9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				UIViewUtility.swift,
 				Utility.swift,
 			);
 			target = 8419CC442C3D38E600FF07AB /* newCalculatorTest */;
@@ -197,7 +204,9 @@
 		8419CC462C3D38E600FF07AB /* newCalculatorTest */ = {
 			isa = PBXGroup;
 			children = (
-				8419CC472C3D38E600FF07AB /* newCalculatorTest.swift */,
+				8419CC472C3D38E600FF07AB /* CalculatorViewControllerTest.swift */,
+				F65E52B42C468085005C41F9 /* TableViewCellModelTest.swift */,
+				F65E52B62C468098005C41F9 /* CollectionViewCellModelTest.swift */,
 			);
 			path = newCalculatorTest;
 			sourceTree = "<group>";
@@ -382,7 +391,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8419CC482C3D38E600FF07AB /* newCalculatorTest.swift in Sources */,
+				F65E52B72C468099005C41F9 /* CollectionViewCellModelTest.swift in Sources */,
+				F65E52B52C468085005C41F9 /* TableViewCellModelTest.swift in Sources */,
+				8419CC482C3D38E600FF07AB /* CalculatorViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23086.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23076"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="377" height="108"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xaa-tk-WYa">
+                        <rect key="frame" x="163.66666666666666" y="29" width="50" height="50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="52r-uq-Shn"/>
+                            <constraint firstAttribute="width" constant="50" id="9Vb-7C-kcg"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8u-Cb-BjQ">
                         <rect key="frame" x="168" y="44" width="41.333333333333343" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -24,15 +33,25 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Xaa-tk-WYa" firstAttribute="centerX" secondItem="AIh-FB-CXM" secondAttribute="centerX" id="56T-xv-3Ql"/>
+                    <constraint firstItem="Xaa-tk-WYa" firstAttribute="centerY" secondItem="c8u-Cb-BjQ" secondAttribute="centerY" id="aut-bj-xtB"/>
                     <constraint firstItem="c8u-Cb-BjQ" firstAttribute="centerY" secondItem="AIh-FB-CXM" secondAttribute="centerY" id="t4v-qQ-h5e"/>
+                    <constraint firstItem="Xaa-tk-WYa" firstAttribute="centerX" secondItem="c8u-Cb-BjQ" secondAttribute="centerX" id="tRm-G5-Ois"/>
+                    <constraint firstItem="Xaa-tk-WYa" firstAttribute="centerY" secondItem="AIh-FB-CXM" secondAttribute="centerY" id="uxQ-qY-Fzt"/>
                     <constraint firstItem="c8u-Cb-BjQ" firstAttribute="centerX" secondItem="AIh-FB-CXM" secondAttribute="centerX" id="xY6-Hp-5Ib"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="377" height="196"/>
             <connections>
                 <outlet property="cellLabel" destination="c8u-Cb-BjQ" id="gud-44-1Ha"/>
+                <outlet property="cellView" destination="Xaa-tk-WYa" id="SDx-lW-VBm"/>
             </connections>
             <point key="canvasLocation" x="-66.412213740458014" y="1.4084507042253522"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

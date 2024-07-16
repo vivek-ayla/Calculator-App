@@ -15,7 +15,6 @@ enum images {
     static let imageFive = UIImage(named: "alert3")
 }
 
-
 class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
