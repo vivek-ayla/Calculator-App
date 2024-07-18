@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5qi-nw-toO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23086.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5qi-nw-toO">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23076"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -220,16 +220,6 @@
                                                     <action selector="buttonEqualTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5OE-9e-Acp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1X-Rj-iUe">
-                                                <rect key="frame" x="119" y="216" width="51" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="AC"/>
-                                                <connections>
-                                                    <action selector="buttonAllClearTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lM-7C-Wg8"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rql-6b-9m4">
                                                 <rect key="frame" x="201" y="167" width="45" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -238,6 +228,28 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="÷"/>
                                                 <connections>
                                                     <action selector="buttonDivisionTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zYq-gH-SbM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5w9-fv-dRY">
+                                                <rect key="frame" x="95" y="215" width="151" height="42"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Result"/>
+                                                <connections>
+                                                    <action selector="resultButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yn6-QX-aGg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1X-Rj-iUe">
+                                                <rect key="frame" x="42" y="216" width="45" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="AC">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonAllClearTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lM-7C-Wg8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -278,11 +290,44 @@
                     <connections>
                         <outlet property="expressionLabel" destination="I3T-go-lBy" id="KtV-T2-ZQl"/>
                         <outlet property="resultLabel" destination="9WU-YR-fth" id="52Z-fE-8zS"/>
+                        <segue destination="Xsv-V5-4Sm" kind="show" identifier="segueToResultVC" id="ZSu-VY-OUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.4045801526718" y="3.5211267605633805"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="Ji5-10-BAn">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="Xsv-V5-4Sm" customClass="ResultViewController" customModule="newCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dke-MP-2Kl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMQ-BJ-CAA">
+                                <rect key="frame" x="84" y="91" width="224" height="27"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Th4-XC-8Zq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nMQ-BJ-CAA" firstAttribute="top" secondItem="Th4-XC-8Zq" secondAttribute="top" constant="91" id="bvf-kE-btC"/>
+                            <constraint firstItem="Th4-XC-8Zq" firstAttribute="trailing" secondItem="nMQ-BJ-CAA" secondAttribute="trailing" constant="85" id="dI8-OK-Z64"/>
+                            <constraint firstItem="nMQ-BJ-CAA" firstAttribute="leading" secondItem="Th4-XC-8Zq" secondAttribute="leading" constant="84" id="jxY-UE-P5Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="120-HZ-fsF"/>
+                    <connections>
+                        <outlet property="resultLable" destination="nMQ-BJ-CAA" id="dsA-Et-g50"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZiA-Cf-zYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884.7328244274809" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1FX-fU-6OR">
@@ -338,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v74-iR-sih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2107.6335877862593" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="2767" y="4"/>
         </scene>
     </scenes>
     <resources>
@@ -350,6 +395,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

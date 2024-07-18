@@ -59,6 +59,7 @@
 			membershipExceptions = (
 				CalculatorViewController.swift,
 				GreenScreenViewController.swift,
+				ResultViewController.swift,
 				ViewController.swift,
 			);
 			target = 84EB335A2C2B40E1007592D3 /* newCalculator */;
@@ -68,6 +69,7 @@
 			membershipExceptions = (
 				CalculatorViewController.swift,
 				GreenScreenViewController.swift,
+				ResultViewController.swift,
 				ViewController.swift,
 			);
 			target = 84098B592C2EA873001024CC /* newCalculatorTests */;
@@ -77,6 +79,7 @@
 			membershipExceptions = (
 				CalculatorViewController.swift,
 				GreenScreenViewController.swift,
+				ResultViewController.swift,
 				ViewController.swift,
 			);
 			target = 8419CC442C3D38E600FF07AB /* newCalculatorTest */;

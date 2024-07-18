@@ -7,15 +7,22 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController {
-    
+protocol CalculatorViewDelegate{
+    func sendResult(result: Double)
+}
+
+
+class CalculatorViewController: UIViewController{
     
     @IBOutlet weak var expressionLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
+    
+    var delegate: CalculatorViewDelegate?
+    var resultValue: Double = 0
     var result = " "
     var expression = " "
-    
+        
     @IBAction func buttonOneTap(_ sender: Any) {
         expressionLabel.text = buttonOne()
     }
@@ -87,7 +94,22 @@ class CalculatorViewController: UIViewController {
         if(buttonAllClear()){
             expressionLabel.text = " "
             resultLabel.text = " "
+            resultValue = 0
         }
+    }
+    
+    // MARK: RESULT BUTTON
+    @IBAction func resultButtonTap(_ sender: Any) {
+        
+        let resultValue: Double = resultValue
+        performSegue(withIdentifier: "segueToResultVC", sender: resultValue)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if (segue.identifier == "segueToResultVC") {
+           let rv = segue.destination as! ResultViewController
+           rv.resultValue = resultLabel.text
+       }
     }
     
     override func viewDidLoad() {
@@ -97,6 +119,15 @@ class CalculatorViewController: UIViewController {
 
 extension CalculatorViewController{
     
+    func resultButtonTapped() {
+        
+        delegate?.sendResult(result: resultValue)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "ResultViewController")
+        navigationController?.pushViewController(vc,
+                                                 animated: true)
+    }
+
     func setExpression(_ buttonValue:String)->String{
         expression += buttonValue
         result = expression
@@ -248,6 +279,7 @@ extension CalculatorViewController{
 
         let exp = NSExpression(format: modifiedExpression)
         if let result = exp.expressionValue(with: nil, context: nil) as? Double {
+            resultValue = result
             return result
         }
         return nil

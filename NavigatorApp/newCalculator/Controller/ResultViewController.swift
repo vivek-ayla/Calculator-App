@@ -10,11 +10,13 @@ import UIKit
 
 
 class ResultViewController: UIViewController {
-    @IBOutlet weak var resultLabel: UILabel!
-}
-
-extension ResultViewController: CalculatorViewDelegate{
-    func sendResult(result: Double) {
-        resultLabel.text = ""
+    
+    @IBOutlet weak var resultLable: UILabel!
+    var resultValue: String? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resultLable.text = "Result =  \(resultValue!)"
     }
 }
+

@@ -8,19 +8,22 @@
 import Foundation
 import UIKit
 
-public struct TableViewCellModel {
-    static var idCount = 1
+class TableViewCellModel {
+
     let id: Int
     let title: String?
     let subTitle: String?
     let image: UIImage?
     
-    init(title: String? = nil, subTitle:String? = nil, image: UIImage? = nil) {
-        id = TableViewCellModel.idCount
+    init(id: Int, title: String? = nil, subTitle:String? = nil, image: UIImage? = nil) {
+        self.id = id
         self.title = title
         self.subTitle = subTitle
         self.image = image
-        TableViewCellModel.idCount += 1
+    }
+    
+    convenience init(){
+        self.init(id: 0, title: "Dummy", subTitle: "Dummy", image: UIImage(systemName: "info.circle"))
     }
     
     public func getId()->Int{
