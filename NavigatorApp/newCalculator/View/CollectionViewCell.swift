@@ -21,6 +21,6 @@ class CollectionViewCell: UICollectionViewCell {
         cellLabel.text = collectionCell.getTitle()
         cellLabel.textColor = .white
         cellView.completelyRoundedCorner()
-        cellView.backgroundColor = .blue
+        cellView.backgroundColor = collectionCell.getBgColor()
     }
 }

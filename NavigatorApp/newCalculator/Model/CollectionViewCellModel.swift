@@ -8,16 +8,19 @@
 import Foundation
 import UIKit
 
-struct CollectionViewCellModel {
-    static var idCount = 1
-    
+class CollectionViewCellModel {
     let id: Int
     let title: String?
+    let bgColor: UIColor?
     
-    init(title: String? = nil) {
-        id = CollectionViewCellModel.idCount
+    init(id: Int, title: String? = nil, bgColor: UIColor) {
+        self.id = id
         self.title = title
-        CollectionViewCellModel.idCount += 1
+        self.bgColor = bgColor
+    }
+    
+    convenience init(){
+        self.init(id: 0, title: "Dummy", bgColor: Utility.generateRandomColor())
     }
     
     public func getId()-> Int{
@@ -30,4 +33,13 @@ struct CollectionViewCellModel {
         }
         return title
     }
+    
+    public func getBgColor()-> UIColor{
+        guard let bgColor = self.bgColor else{
+            return .black
+        }
+        return bgColor
+    }
+    
+    
 }

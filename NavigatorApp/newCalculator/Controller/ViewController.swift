@@ -20,11 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var tableCell:[TableViewCellModel] = [
-        TableViewCellModel(title: "Calculator",subTitle: "Calculator SubTitle" , image: images.imageOne),
-        TableViewCellModel(title: "Green Screen", subTitle: "Green SubTitle", image: images.imageTwo),
-        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: images.imageThree),
-        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: images.imageFour),
-        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: images.imageFive)
+        TableViewCellModel(id: 1, title: "Calculator",subTitle: "Calculator SubTitle" , image: images.imageOne),
+        TableViewCellModel(id: 2, title: "Green Screen", subTitle: "Green SubTitle", image: images.imageTwo),
+        TableViewCellModel(id: 3, title: "Alert", subTitle: "Alert SubTitle", image: images.imageThree),
+        TableViewCellModel(id: 4, title: "Alert", subTitle: "Alert SubTitle", image: images.imageFour),
+        TableViewCellModel(id:5, title: "Alert", subTitle: "Alert SubTitle", image: images.imageFive)
         ]
     
     var viewControllerID:[String] = ["calculatorVC","greenScreenVC" ]

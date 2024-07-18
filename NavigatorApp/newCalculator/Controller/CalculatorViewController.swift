@@ -17,50 +17,50 @@ class CalculatorViewController: UIViewController {
     var expression = " "
     
     @IBAction func buttonOneTap(_ sender: Any) {
-        expressionLabel.text = buttonOne()
+        buttonOne()
     }
     
     @IBAction func buttonTwoTap(_ sender: Any) {
-        expressionLabel.text = buttonTwo()
+        buttonTwo()
     }
     
     @IBAction func buttonThreeTap(_ sender: Any) {
-        expressionLabel.text = buttonThree()
+        buttonThree()
     }
     
     @IBAction func buttonFourTap(_ sender: Any) {
-        expressionLabel.text = buttonFour()
+        buttonFour()
     }
     
     @IBAction func buttonFiveTap(_ sender: Any) {
-        expressionLabel.text = buttonFive()
+        buttonFive()
     }
     
     @IBAction func buttonSixTap(_ sender: Any) {
-        expressionLabel.text = buttonSix()
+        buttonSix()
     }
     
     
     @IBAction func buttonSevenTap(_ sender: Any) {
-        expressionLabel.text = buttonSeven()
+        buttonSeven()
     }
     
     
     @IBAction func buttonEightTap(_ sender: Any) {
-        expressionLabel.text = buttonEight()
+        buttonEight()
     }
     
     
     @IBAction func buttonNineTap(_ sender: Any) {
-        expressionLabel.text = buttonNine()
+        buttonNine()
     }
     
     @IBAction func buttonZeroTap(_ sender: Any) {
-        expressionLabel.text = buttonZero()
+        buttonZero()
     }
     
     @IBAction func buttonDotTap(_ sender: Any) {
-        expressionLabel.text = buttonDot()
+        buttonDot()
     }
     
     @IBAction func buttonEqualTap(_ sender: Any) {
@@ -68,78 +68,90 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func buttonAdditionTap(_ sender: Any) {
-        expressionLabel.text = buttonAddition()
+        buttonAddition()
     }
+    
     
     @IBAction func buttonSubtractionTap(_ sender: Any) {
-        expressionLabel.text = buttonSubtraction()
+        buttonSubtraction()
     }
     
+    
     @IBAction func buttonMultiplicationTap(_ sender: Any) {
-        expressionLabel.text = buttonMultiplication()
+        buttonMultiplication()
     }
     
     @IBAction func buttonDivisionTap(_ sender: Any) {
-        expressionLabel.text = buttonDivision()
+        buttonDivision()
     }
     
     @IBAction func buttonAllClearTap(_ sender: Any) {
-        if(buttonAllClear()){
-            expressionLabel.text = " "
-            resultLabel.text = " "
-        }
+        buttonAllClear()
     }
     
+    @IBAction func resultButtonTap(_ sender: Any) {
+        
+        let resultValue: String = resultLabel.text!
+        performSegue(withIdentifier: "segueToResultVC", sender: resultValue)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueToResultVC") {
+            let rv = segue.destination as! ResultViewController
+            rv.resultValue = resultLabel.text
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
     }
 }
 
 extension CalculatorViewController{
-    
-    func setExpression(_ buttonValue:String)->String{
+    func setExpression(_ buttonValue:String){
         expression += buttonValue
         result = expression
-        return expression.trimmingCharacters(in: .whitespaces)
+        expressionLabel.text = expression
     }
     
-    func buttonOne()->String{
-        return setExpression("1")
+    func buttonOne(){
+        setExpression("1")
     }
     
-    func buttonTwo()-> String{
-        return setExpression("2")
+    func buttonTwo(){
+        setExpression("2")
     }
     
-    func buttonThree()->String{
-        return setExpression("3")
+    func buttonThree(){
+        setExpression("3")
     }
     
-    func buttonFour()->String{
-        return setExpression("4")
+    func buttonFour(){
+        setExpression("4")
     }
     
-    func buttonFive()->String{
-        return setExpression("5")
+    func buttonFive(){
+        setExpression("5")
     }
     
-    func buttonSix()->String{
-        return setExpression("6")
+    func buttonSix(){
+        setExpression("6")
     }
     
-    func buttonSeven()->String{
-        return setExpression("7")
+    func buttonSeven(){
+        setExpression("7")
     }
     
-    func buttonEight()->String{
-        return setExpression("8")
+    func buttonEight(){
+        setExpression("8")
     }
     
-    func buttonNine()->String{
-        return setExpression("9")
+    func buttonNine(){
+        setExpression("9")
     }
     
-    func buttonZero()->String{
+    func buttonZero(){
         if expression.trimmingCharacters(in: .whitespaces).isEmpty {
                 expression = "0"
             } else if expression.suffix(2) == "+0" || expression.suffix(2) == "-0" || expression.suffix(2) == "X0" || expression.suffix(2) == "÷0" {
@@ -149,16 +161,15 @@ extension CalculatorViewController{
                 expression += "0"
             }
             result = expression
-            return expression
+            expressionLabel.text = expression
     }
     
-    func buttonDot()->String{
+    func buttonDot(){
         let lastSegment = expression.split { ["+", "-", "X", "÷"].contains(String($0)) }.last ?? ""
         
         if !lastSegment.contains(".") {
-            return setExpression(".")
+            setExpression(".")
         }
-        return setExpression(".")
     }
     
     func buttonEqual(){
@@ -186,7 +197,7 @@ extension CalculatorViewController{
         }
     }
     
-    func buttonAddition()->String{
+    func buttonAddition(){
         if(expression.suffix(1) == "+" || expression.suffix(1) == "-" || expression.suffix(1) == "X" ||
            expression.suffix(1) == "÷"){
             expression.removeLast()
@@ -195,18 +206,19 @@ extension CalculatorViewController{
             expression += "+"
         }
         result = expression
-        return expression
+        expressionLabel.text = expression
     }
     
-    func buttonSubtraction()->String{
+    func buttonSubtraction(){
         if(expression.suffix(1) == "+" || expression.suffix(1) == "-" || expression.suffix(1) == "X" ||
            expression.suffix(1) == "÷"){
             expression.removeLast()
         }
-        return setExpression("-")
+        
+        setExpression("-")
     }
     
-    func buttonMultiplication()->String{
+    func buttonMultiplication(){
         if(expression.suffix(1) == "+" || expression.suffix(1) == "-" || expression.suffix(1) == "X" ||
            expression.suffix(1) == "÷"){
             expression.removeLast()
@@ -217,11 +229,11 @@ extension CalculatorViewController{
         }
         
         result = expression
-        return expression
+        expressionLabel.text = expression
     }
     
     
-    func buttonDivision()->String{
+    func buttonDivision(){
         if(expression.suffix(1) == "+" || expression.suffix(1) == "-" || expression.suffix(1) == "X" ||
            expression.suffix(1) == "÷"){
             expression.removeLast()
@@ -230,17 +242,14 @@ extension CalculatorViewController{
             expression += "÷"
         }
         result = expression
-        return expression
+        expressionLabel.text = expression
     }
     
-    func buttonAllClear()->Bool{
+    func buttonAllClear(){
         result = " "
         expression = " "
-                
-        if result == " " || expression == " "{
-            return true;
-        }
-        return false;
+        expressionLabel.text = " "
+        resultLabel.text = " "
     }
     
     func calculateExpression(_ expression: String) -> Double? {
@@ -253,3 +262,4 @@ extension CalculatorViewController{
         return nil
     }
 }
+

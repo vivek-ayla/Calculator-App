@@ -13,21 +13,21 @@ class GreenScreenViewController: UIViewController {
     @IBOutlet var viewUI: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var cellItems:[CollectionViewCellModel] = [CollectionViewCellModel(title: "1"),
-                                               CollectionViewCellModel(title: "2"),
-                                               CollectionViewCellModel(title: "3"),
-                                               CollectionViewCellModel(title: "4"),
-                                               CollectionViewCellModel(title: "5"),
-                                               CollectionViewCellModel(title: "6"),
-                                               CollectionViewCellModel(title: "7"),
-                                               CollectionViewCellModel(title: "8"),
-                                               CollectionViewCellModel(title: "9"),
-                                               CollectionViewCellModel(title: "10"),
-                                               CollectionViewCellModel(title: "11"),
-                                               CollectionViewCellModel(title: "12"),
-                                               CollectionViewCellModel(title: "13"),
-                                               CollectionViewCellModel(title: "14"),
-                                               CollectionViewCellModel(title: "15")
+    var cellItems:[CollectionViewCellModel] = [CollectionViewCellModel(id: 1, title: "1", bgColor: .blue),
+                                               CollectionViewCellModel(id: 2, title: "2", bgColor: .blue),
+                                               CollectionViewCellModel(id: 3, title: "3", bgColor: .blue),
+                                               CollectionViewCellModel(id: 4, title: "4", bgColor: .blue),
+                                               CollectionViewCellModel(id: 5, title: "5", bgColor: .blue),
+                                               CollectionViewCellModel(id: 6, title: "6", bgColor: .blue),
+                                               CollectionViewCellModel(id: 7, title: "7", bgColor: .blue),
+                                               CollectionViewCellModel(id: 8, title: "8", bgColor: .blue),
+                                               CollectionViewCellModel(id: 9, title: "9", bgColor: .blue),
+                                               CollectionViewCellModel(id: 10, title: "10", bgColor: .blue),
+                                               CollectionViewCellModel(id: 11, title: "11", bgColor: .blue),
+                                               CollectionViewCellModel(id: 12, title: "12", bgColor: .blue),
+                                               CollectionViewCellModel(id: 13, title: "13", bgColor: .blue),
+                                               CollectionViewCellModel(id: 14, title: "14", bgColor: .blue),
+                                               CollectionViewCellModel()
                                             ]
     
     override func viewDidLayoutSubviews() {
@@ -55,7 +55,4 @@ extension GreenScreenViewController: UICollectionViewDataSource,UICollectionView
         cell.setUp(collectionCell: cellItems[indexPath.row])
         return cell
     }
-    
-    
-    
 }
