@@ -98,7 +98,7 @@ class CalculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueToResultVC") {
             let rv = segue.destination as! ResultViewController
-            rv.resultValue = resultLabel.text
+            rv.resultValue = sender as? String
         }
     }
     override func viewDidLoad() {
