@@ -11,7 +11,7 @@ import UIKit
 class TableViewCellModel {
 
     let id: Int
-    let title: String?
+    var title: String?
     let subTitle: String?
     let image: UIImage?
     

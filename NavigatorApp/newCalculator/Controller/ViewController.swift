@@ -41,14 +41,22 @@ class ViewController: UIViewController {
         tableView.delegate = self
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTable(_ :)), name: Notification.Name(rawValue: notificationKey), object: nil)
     }
-    
-    //    override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
-    //
-    //    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    @objc func updateTable(_ notifications:NSNotification){
+        tableCell[0].title = notifications.userInfo?["data"] as? String
+        tableView?.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -57,7 +65,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let vc = storyBoard.instantiateViewController(withIdentifier: viewControllerID[indexPath.row])
             if(viewControllerID[indexPath.row] == "calculatorVC"){
                 vc.navigationItem.title = "Calculator"
-            }else{
+            }else if let vc = vc as? GreenScreenViewController{
                 vc.navigationItem.title = "Green Screen"
             }
             

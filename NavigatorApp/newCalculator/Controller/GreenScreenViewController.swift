@@ -7,12 +7,14 @@
 
 import UIKit
 
+let notificationKey = "com.vivek.aylanetworks"
+
 class GreenScreenViewController: UIViewController {
     
-    
+    @IBOutlet var gvcLabel: UILabel!
     @IBOutlet var viewUI: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+     
     var cellItems:[CollectionViewCellModel] = [CollectionViewCellModel(id: 1, title: "1", bgColor: .blue),
                                                CollectionViewCellModel(id: 2, title: "2", bgColor: .blue),
                                                CollectionViewCellModel(id: 3, title: "3", bgColor: .blue),
@@ -41,7 +43,22 @@ class GreenScreenViewController: UIViewController {
         collectionView.register(collectionViewCellNib, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView.dataSource = self
         collectionView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(doSomeTask(_:)), name: NSNotification.Name(rawValue: notificationKey), object: nil)
+        if let textFieldValue = UserDefaults.standard.value(forKey: "textFieldValue"){
+            gvcLabel.text = textFieldValue as? String
+        }
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+//    func registerNotification() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.doSomeTask(_:)), name: NSNotification.Name(rawValue: notificationKey), object: nil)
+//    }
+    
+    @objc func doSomeTask(_ notification: NSNotification){
+        gvcLabel.text = notification.userInfo!["data"] as? String
     }
 }
 
