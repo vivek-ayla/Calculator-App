@@ -93,6 +93,15 @@ class CalculatorViewController: UIViewController {
         resultButtonTapped()
     }
     
+// <<<<<<< Vivek/Features
+// =======
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueToResultVC") {
+            let rv = segue.destination as! ResultViewController
+            rv.resultValue = sender as? String
+        }
+    }
+// >>>>>>> Develop
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateTitle(_ :)), name: Notification.Name(rawValue: notificationKey), object: nil)
