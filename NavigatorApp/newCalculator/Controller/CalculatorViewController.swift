@@ -90,25 +90,28 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func resultButtonTap(_ sender: Any) {
-        
-        let resultValue: String = resultLabel.text!
-        performSegue(withIdentifier: "segueToResultVC", sender: resultValue)
+        resultButtonTapped()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "segueToResultVC") {
-            let rv = segue.destination as! ResultViewController
-            rv.resultValue = resultLabel.text
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTitle(_ :)), name: Notification.Name(rawValue: notificationKey), object: nil)
         // Do any additional setup after loading the view.
     }
 }
 
 extension CalculatorViewController{
+    
+    @objc func updateTitle(_ notifications: NSNotification){
+        navigationItem.title = notifications.userInfo?["data"] as? String
+    }
+    
+    func resultButtonTapped(){
+        let rvc = storyboard?.instantiateViewController(withIdentifier: "resultVC") as! ResultViewController
+        rvc.delegate = self
+        navigationController?.pushViewController(rvc, animated: true)
+    }
+    
     func setExpression(_ buttonValue:String){
         expression += buttonValue
         result = expression
@@ -263,3 +266,8 @@ extension CalculatorViewController{
     }
 }
 
+extension CalculatorViewController: ResultDelegate{
+    func sendDataToCVC(data: String) {
+        navigationItem.title = data
+    }
+}

@@ -290,7 +290,6 @@
                     <connections>
                         <outlet property="expressionLabel" destination="I3T-go-lBy" id="KtV-T2-ZQl"/>
                         <outlet property="resultLabel" destination="9WU-YR-fth" id="52Z-fE-8zS"/>
-                        <segue destination="Xsv-V5-4Sm" kind="show" identifier="segueToResultVC" id="ZSu-VY-OUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -300,29 +299,39 @@
         <!--Result View Controller-->
         <scene sceneID="Ji5-10-BAn">
             <objects>
-                <viewController storyboardIdentifier="ResultViewController" id="Xsv-V5-4Sm" customClass="ResultViewController" customModule="newCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultVC" id="Xsv-V5-4Sm" customClass="ResultViewController" customModule="newCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dke-MP-2Kl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMQ-BJ-CAA">
-                                <rect key="frame" x="84" y="91" width="224" height="27"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWc-z9-dXF">
+                                <rect key="frame" x="16" y="142" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i02-q5-EI8">
+                                <rect key="frame" x="159" y="209" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                <connections>
+                                    <action selector="sendButtonTapped" destination="Xsv-V5-4Sm" eventType="touchUpInside" id="3J9-JU-Odb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Th4-XC-8Zq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nMQ-BJ-CAA" firstAttribute="top" secondItem="Th4-XC-8Zq" secondAttribute="top" constant="91" id="bvf-kE-btC"/>
-                            <constraint firstItem="Th4-XC-8Zq" firstAttribute="trailing" secondItem="nMQ-BJ-CAA" secondAttribute="trailing" constant="85" id="dI8-OK-Z64"/>
-                            <constraint firstItem="nMQ-BJ-CAA" firstAttribute="leading" secondItem="Th4-XC-8Zq" secondAttribute="leading" constant="84" id="jxY-UE-P5Q"/>
+                            <constraint firstItem="QWc-z9-dXF" firstAttribute="top" secondItem="Th4-XC-8Zq" secondAttribute="top" constant="83" id="10Z-0P-z9B"/>
+                            <constraint firstItem="i02-q5-EI8" firstAttribute="leading" secondItem="Th4-XC-8Zq" secondAttribute="leading" constant="159" id="HhN-kN-Ksk"/>
+                            <constraint firstItem="QWc-z9-dXF" firstAttribute="leading" secondItem="Th4-XC-8Zq" secondAttribute="leading" constant="16" id="VQh-u6-eaa"/>
+                            <constraint firstItem="Th4-XC-8Zq" firstAttribute="trailing" secondItem="i02-q5-EI8" secondAttribute="trailing" constant="159" id="XzS-Va-IjS"/>
+                            <constraint firstItem="i02-q5-EI8" firstAttribute="top" secondItem="QWc-z9-dXF" secondAttribute="bottom" constant="33" id="rHs-NJ-FIq"/>
+                            <constraint firstItem="Th4-XC-8Zq" firstAttribute="trailing" secondItem="QWc-z9-dXF" secondAttribute="trailing" constant="16" id="y5M-UY-eCC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="120-HZ-fsF"/>
                     <connections>
-                        <outlet property="resultLable" destination="nMQ-BJ-CAA" id="dsA-Et-g50"/>
+                        <outlet property="textField" destination="QWc-z9-dXF" id="Gfd-cU-4jP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiA-Cf-zYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -366,24 +375,34 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKK-a5-6JE">
+                                <rect key="frame" x="175" y="740" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EsF-bT-EKc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="YKK-a5-6JE" firstAttribute="top" secondItem="XAt-mm-duf" secondAttribute="bottom" constant="49" id="Bwk-aQ-1bu"/>
                             <constraint firstItem="XAt-mm-duf" firstAttribute="leading" secondItem="eeU-kC-S2L" secondAttribute="leadingMargin" id="DS3-rL-6bm"/>
                             <constraint firstItem="XAt-mm-duf" firstAttribute="trailing" secondItem="eeU-kC-S2L" secondAttribute="trailingMargin" id="Ydw-r7-iyM"/>
+                            <constraint firstItem="YKK-a5-6JE" firstAttribute="leading" secondItem="EsF-bT-EKc" secondAttribute="leading" constant="175" id="l2u-SZ-qXh"/>
                             <constraint firstItem="XAt-mm-duf" firstAttribute="top" secondItem="EsF-bT-EKc" secondAttribute="top" constant="102" id="lYG-yo-fcQ"/>
                             <constraint firstItem="XAt-mm-duf" firstAttribute="centerY" secondItem="eeU-kC-S2L" secondAttribute="centerY" id="sJc-fj-2WY"/>
+                            <constraint firstItem="EsF-bT-EKc" firstAttribute="trailing" secondItem="YKK-a5-6JE" secondAttribute="trailing" constant="176" id="sgM-o9-BLS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="XAt-mm-duf" id="ghg-fv-VTZ"/>
+                        <outlet property="gvcLabel" destination="YKK-a5-6JE" id="o5Y-Hw-yPn"/>
                         <outlet property="viewUI" destination="eeU-kC-S2L" id="uPm-YJ-VFQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v74-iR-sih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="4"/>
+            <point key="canvasLocation" x="2765.6488549618321" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
