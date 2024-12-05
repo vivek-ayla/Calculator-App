@@ -9,82 +9,9 @@ import Testing
 import UIKit
 @testable import newCalculator
 
-
-
-// MARK: COLLECTION VIEW CELL MODEL TEST CASES
-@Suite("Model - Collection View Cell Model")
-struct collectionViewCellModel {
-    @Suite("Collection View Cell Model Without initializer")
-    struct collectionViewCellModelWithoutInitializer {
-        var cvmut: CollectionViewCellModel = CollectionViewCellModel()
-        
-        @Test
-        func getTitle() async throws {
-            #expect(cvmut.getTitle() == "")
-        }
-    }
-    
-    @Suite("Collection View Cell Model With initializer")
-    struct collectionViewCellModelWithInitializer {
-        var cvmut: CollectionViewCellModel = CollectionViewCellModel(title: "Collection View Cell Title")
-        
-        @Test
-        func getTitle() async throws {
-            #expect(cvmut.getTitle() == "Collection View Cell Title")
-        }
-    }
-}
-
-// MARK: TABLE VIEW CELL MODEL TEST CASES
-@Suite("Model - Table View Cell Model")
-struct tableViewCellModel {
-    
-    @Suite("Table View Cell Model Without Initializer")
-    struct tableViewCellModelWithoutInitializer {
-        var tvmut: TableViewCellModel = TableViewCellModel()
-        
-        @Test
-        func getTitle() async throws {
-            #expect(tvmut.getTitle() == "")
-        }
-        
-        @Test
-        func getSubTitle() async throws {
-            #expect(tvmut.getSubTitle() == "")
-        }
-        
-        @Test
-        func getImage() async throws {
-            #expect(tvmut.getImage() == UIImage(systemName: "info.circle"))
-        }
-    }
-    
-    @Suite("Table View Cell Model With Initializer")
-    struct tableViewCellModelWithInitializer {
-        var tvmut: TableViewCellModel = TableViewCellModel(title: "Table View Cell Title", subTitle: "Table View Cell Subtitle", image: UIImage(named: "anyImage"))
-        
-        @Test
-        func getTitle() async throws {
-            #expect(tvmut.getTitle() == "Table View Cell Title")
-        }
-        
-        @Test
-        func getSubTitle() async throws {
-            #expect(tvmut.getSubTitle() == "Table View Cell Subtitle")
-        }
-        
-        @Test
-        func getImage() async throws {
-            #expect(tvmut.getImage() == UIImage(named: "anyImage"))
-        }
-    }
-
-}
-
-
 // MARK: CONTROLLER TEST CASES
 @Suite("Controller - Calculator View Controller")
-struct newCalculatorTest{
+struct CalculatorViewControllerTest{
     
     var sut: CalculatorViewController = CalculatorViewController()
     

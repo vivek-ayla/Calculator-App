@@ -8,11 +8,23 @@
 import Foundation
 import UIKit
 
-struct CollectionViewCellModel {
+class CollectionViewCellModel {
+    let id: Int
     let title: String?
+    let bgColor: UIColor?
     
-    init(title: String? = nil) {
+    init(id: Int, title: String? = nil, bgColor: UIColor) {
+        self.id = id
         self.title = title
+        self.bgColor = bgColor
+    }
+    
+    convenience init(){
+        self.init(id: 0, title: "Dummy", bgColor: Utility.generateRandomColor())
+    }
+    
+    public func getId()-> Int{
+        return id
     }
     
     public func getTitle() -> String{
@@ -21,4 +33,13 @@ struct CollectionViewCellModel {
         }
         return title
     }
+    
+    public func getBgColor()-> UIColor{
+        guard let bgColor = self.bgColor else{
+            return .black
+        }
+        return bgColor
+    }
+    
+    
 }

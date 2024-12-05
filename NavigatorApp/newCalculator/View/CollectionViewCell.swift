@@ -10,14 +10,17 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func setUp(collectionCell:CollectionViewCellModel) {
-        self.backgroundColor = Utility.generateRandomColor()
-        self.cellLabel.text = collectionCell.getTitle()
+        backgroundColor = Utility.generateRandomColor()
+        cellLabel.text = collectionCell.getTitle()
+        cellLabel.textColor = .white
+        cellView.completelyRoundedCorner()
+        cellView.backgroundColor = collectionCell.getBgColor()
     }
-
 }

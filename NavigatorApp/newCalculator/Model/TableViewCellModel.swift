@@ -8,15 +8,26 @@
 import Foundation
 import UIKit
 
-public struct TableViewCellModel {
-    let title:String?
-    let subTitle:String?
-    let image:UIImage?
+class TableViewCellModel {
+
+    let id: Int
+    let title: String?
+    let subTitle: String?
+    let image: UIImage?
     
-    init(title: String? = nil, subTitle:String? = nil, image: UIImage? = nil) {
+    init(id: Int, title: String? = nil, subTitle:String? = nil, image: UIImage? = nil) {
+        self.id = id
         self.title = title
         self.subTitle = subTitle
         self.image = image
+    }
+    
+    convenience init(){
+        self.init(id: 0, title: "Dummy", subTitle: "Dummy", image: UIImage(systemName: "info.circle"))
+    }
+    
+    public func getId()->Int{
+        return id
     }
     
     public func getTitle() -> String {

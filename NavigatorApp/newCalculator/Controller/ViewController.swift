@@ -7,16 +7,24 @@
 
 import UIKit
 
+enum images {
+    static let imageOne = UIImage(named: "calculator")
+    static let imageTwo = UIImage(named: "greenScreen")
+    static let imageThree = UIImage(named: "alert1")
+    static let imageFour = UIImage(named: "alert2")
+    static let imageFive = UIImage(named: "alert3")
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
     var tableCell:[TableViewCellModel] = [
-        TableViewCellModel(title: "Calculator",subTitle: "Calculator SubTitle" , image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Green Screen", subTitle: "Green SubTitle", image: UIImage(named: "")),
-        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: UIImage(named: "anyImage")),
-        TableViewCellModel(title: "Alert", subTitle: "Alert SubTitle", image: UIImage(named: "anyImage"))
+        TableViewCellModel(id: 1, title: "Calculator",subTitle: "Calculator SubTitle" , image: images.imageOne),
+        TableViewCellModel(id: 2, title: "Green Screen", subTitle: "Green SubTitle", image: images.imageTwo),
+        TableViewCellModel(id: 3, title: "Alert", subTitle: "Alert SubTitle", image: images.imageThree),
+        TableViewCellModel(id: 4, title: "Alert", subTitle: "Alert SubTitle", image: images.imageFour),
+        TableViewCellModel(id:5, title: "Alert", subTitle: "Alert SubTitle", image: images.imageFive)
         ]
     
     var viewControllerID:[String] = ["calculatorVC","greenScreenVC" ]
